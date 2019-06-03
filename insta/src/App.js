@@ -9,11 +9,26 @@ class App extends React.Component {
   state = {
     data: dummyData
   };
+
+  addComment = (comment) => {
+    const newComment = {
+      text: comment,
+      username: "",
+      id: Date.now()
+    }
+    this.setState(prevState => {
+      return {
+        data: prevState.data.map(post => {
+
+        })
+      }
+    })
+  }
   render() {
     return (
       <div className="App">
         <SearchBar />
-        <PostContainer posts={this.state.data} />
+        <PostContainer posts={this.state.data} addComment={this.addComment} />
       </div>
     );
   }
