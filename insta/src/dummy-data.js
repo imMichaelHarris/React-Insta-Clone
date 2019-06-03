@@ -82,7 +82,7 @@ const dummyData = [
       },
       {
         id: 2,
-        username: 4,
+        username: "awaywetravel",
         text: "Yosemite is my most favorite place in the universe"
       },
       {

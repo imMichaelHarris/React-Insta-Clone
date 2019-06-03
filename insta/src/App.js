@@ -12,9 +12,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <SearchBar />
-        {this.state.data.map(post => {
-          return <PostContainer post={post} key={post.id} />
-        })}
+        <PostContainer posts={this.state.data} />
       </div>
     );
   }
