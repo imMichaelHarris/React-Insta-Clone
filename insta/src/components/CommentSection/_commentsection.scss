@@ -1,0 +1,14 @@
+.comment-username {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.comment-section {
+  margin: 20px;
+  .comment {
+      margin: 5px 0;
+  }
+  input {
+    border: none;
+    margin: 5px 0;
+  }
+}

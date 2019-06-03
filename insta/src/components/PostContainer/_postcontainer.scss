@@ -1,0 +1,25 @@
+.post{
+    width: 60%;
+    margin: 100px auto;
+    background: teal;
+    text-align: left;
+    header{
+        display: flex;
+        padding: 15px 20px;
+        align-items: center;
+        img {
+            max-width: 40px;
+            max-height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+
+        }
+    }
+    h4 {
+        margin: 0 10px;
+    }
+    img{
+        object-fit: cover;
+        width: 100%;
+    }
+}

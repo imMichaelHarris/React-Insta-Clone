@@ -1,13 +1,22 @@
 import React from "react";
 import CommentSection from "../CommentSection/CommentSection";
 import PropTypes from "prop-types";
-
+import { Card, CardImg } from 'reactstrap';
 const Post = props => {
+    console.log(props.post)
   return (
-    <div>
-      <h2>{props.post.username}</h2>
-      <img src={props.post.imageUrl} alt={`${props.post.username}'s post`} />
-      <CommentSection comments={props.post.comments} />
+    <div className="post">
+        <Card>
+            <header>
+                <img src={props.post.thumbnailUrl}></img>
+            <h4>{props.post.username}</h4>
+
+            </header>
+        <CardImg src={props.post.imageUrl} alt={`${props.post.username}'s post`} />
+        <CommentSection comments={props.post.comments} />
+        </Card>
+
+
     </div>
   );
 };

@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
+import { CardText } from 'reactstrap';
 
-const Comment = (props) => {
-    return (
-        <div>
-            <h5>{props.comment.username}</h5>
-            <p>{props.comment.text}</p>
-        </div>
-    )
-}
+const Comment = props => {
+  return (
+    <div className="comment">
+      <CardText><span className="comment-username">{props.comment.username} </span>{props.comment.text}</CardText>
+    </div>
+  );
+};
 
 export default Comment;

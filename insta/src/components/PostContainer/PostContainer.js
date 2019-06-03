@@ -1,5 +1,5 @@
 import React from "react";
-import Post from './Post';
+import Post from "./Post";
 import PropTypes from "prop-types";
 
 const PostContainer = props => {
@@ -8,7 +8,6 @@ const PostContainer = props => {
       {props.posts.map(post => {
         return <Post post={post} key={post.id} />;
       })}
-
     </div>
   );
 };
