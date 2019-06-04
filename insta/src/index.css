@@ -3,7 +3,8 @@
   font-weight: 600; }
 
 .comment-section {
-  margin: 20px; }
+  margin: 20px;
+  margin-top: 0; }
   .comment-section .comment {
     margin: 5px 0; }
     .comment-section .comment .posted {
@@ -45,6 +46,20 @@
   .post img {
     object-fit: cover;
     width: 100%; }
+  .post .actions {
+    margin-top: 20px;
+    margin-left: 15px; }
+    .post .actions span {
+      display: inline-block; }
+    .post .actions .action {
+      width: 24px;
+      height: 24px;
+      background-image: url("insta.png");
+      margin: 0 5px; }
+    .post .actions .like {
+      background-position: -271px -234px; }
+    .post .actions .comment-bubble {
+      background-position: -161px -202px; }
 
 body {
   margin: 0;

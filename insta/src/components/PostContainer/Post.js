@@ -6,7 +6,7 @@ const Post = props => {
   // console.log('post props', props)
 
   return (
-    <div >
+    <div>
       <Card className="post">
         <header>
           <img
@@ -19,6 +19,11 @@ const Post = props => {
           src={props.post.imageUrl}
           alt={`${props.post.username}'s post`}
         />
+        <div className="actions">
+          <span className="action like" />
+          <span className="action comment-bubble" />
+        </div>
+
         <CommentSection
           post={props}
           comments={props.post.comments}
