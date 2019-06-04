@@ -1,13 +1,13 @@
 import React from "react";
 import "./index.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import dummyData from "./dummy-data.js"; //? thought we needed {} to import guess it has something to do with export default at the bottom
 import SearchBar from "./components/SearchBar/SearchBar";
 import PostContainer from "./components/PostContainer/PostContainer";
 
 class App extends React.Component {
   state = {
-    data: [],
+    data: []
   };
 
   // addComment = (comment) => {
@@ -24,14 +24,28 @@ class App extends React.Component {
   //     }
   //   })
   // }
-  componentDidMount(){
+  componentDidMount() {
     this.setState({
       data: dummyData
-    })
+    });
   }
   addComment = (id, input) => {
-    console.log('Main App: ', id, input)
-  }
+    this.setState(prevState => {
+      return {
+        data: prevState.data.map(post => {
+          if (post.id === id) {
+            return {
+              ...post,
+              comments: [...post.comments, input]
+            };
+          } else {
+            return post;
+          }
+        })
+      };
+    });
+    console.log("Main App: ", this.state.data);
+  };
   render() {
     return (
       <div className="App">
