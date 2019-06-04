@@ -33,7 +33,7 @@ class CommentSection extends React.Component {
     this.props.addComment(id, newComment);
   };
   render() {
-    // console.log('Comment props', this.props)
+    // console.log(this.props.post)
     return (
       <div className="comment-section">
         {this.state.comments.map(comment => {

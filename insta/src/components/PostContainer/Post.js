@@ -20,8 +20,9 @@ const Post = props => {
           alt={`${props.post.username}'s post`}
         />
         <div className="actions">
-          <span className="action like" />
+          <span onClick={() => props.likePost(props.post.id)} className="action filled" />
           <span className="action comment-bubble" />
+          <div><span className="likes">{props.post.likes} likes</span></div>
         </div>
 
         <CommentSection

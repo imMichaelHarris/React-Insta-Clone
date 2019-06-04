@@ -6,7 +6,7 @@ const PostContainer = props => {
   return (
     <div>
       {props.posts.map(post => {
-        return <Post post={post} key={post.id} addComment={props.addComment}/>;
+        return <Post post={post} key={post.id} addComment={props.addComment} likePost={props.likePost} />;
       })}
     </div>
   );
