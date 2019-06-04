@@ -3,6 +3,8 @@ import CommentSection from "../CommentSection/CommentSection";
 import PropTypes from "prop-types";
 import { Card, CardImg } from "reactstrap";
 const Post = props => {
+  // console.log('post props', props)
+
   return (
     <div >
       <Card className="post">
@@ -18,6 +20,7 @@ const Post = props => {
           alt={`${props.post.username}'s post`}
         />
         <CommentSection
+          post={props}
           comments={props.post.comments}
           addComment={props.addComment}
         />
