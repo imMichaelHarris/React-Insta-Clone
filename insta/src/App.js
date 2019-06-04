@@ -7,7 +7,7 @@ import PostContainer from "./components/PostContainer/PostContainer";
 
 class App extends React.Component {
   state = {
-    data: dummyData
+    data: []
   };
 
   // addComment = (comment) => {
@@ -24,6 +24,11 @@ class App extends React.Component {
   //     }
   //   })
   // }
+  componentDidMount(){
+    this.setState({
+      data: dummyData
+    })
+  }
   render() {
     return (
       <div className="App">

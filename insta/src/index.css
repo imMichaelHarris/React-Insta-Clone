@@ -29,7 +29,7 @@
   flex-direction: column; }
   @media (min-width: 800px) {
     .post {
-      width: 60%;
+      width: 30%;
       margin: 100px auto; } }
   .post header {
     display: flex;
