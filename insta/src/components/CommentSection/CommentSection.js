@@ -1,36 +1,48 @@
 import React from "react";
 import Comment from "./Comment";
 import PropTypes from "prop-types";
+import Moment from 'react-moment';
 
 class CommentSection extends React.Component {
   state = {
-    commentInput: ""
+    commentInput: "",
+    comments: this.props.comments
   };
 
-  handleChange = (e) => {
-      this.setState({
-          [e.target.name]: e.target.value
-      })
-  }
+  handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
   addComment = e => {
-      e.preventDefault();
-      this.props.addComment(this.state.commentInput)
-  }
+    e.preventDefault();
+    const newComment = {
+      text: this.state.commentInput,
+      username: "Michael",
+      id: Date.now(),
+      posted: <Moment fromNow></Moment>
+    };
+    this.setState(prevState => {
+      return {
+        comments: [...prevState.comments, newComment],
+        commentInput: ""
+      };
+    });
+  };
   render() {
     return (
       <div className="comment-section">
-        {this.props.comments.map(comment => {
+        {this.state.comments.map(comment => {
           return <Comment comment={comment} key={comment.id} />;
         })}
         <form onSubmit={this.addComment}>
-        <input
-          placeholder="Add a comment..."
-          value={this.state.commentInput}
-          onChange={this.handleChange}
-          name="commentInput"
-        />
+          <input
+            placeholder="Add a comment..."
+            value={this.state.commentInput}
+            onChange={this.handleChange}
+            name="commentInput"
+          />
         </form>
-
       </div>
     );
   }

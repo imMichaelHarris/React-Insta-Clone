@@ -10,20 +10,20 @@ class App extends React.Component {
     data: dummyData
   };
 
-  addComment = (comment) => {
-    const newComment = {
-      text: comment,
-      username: "",
-      id: Date.now()
-    }
-    this.setState(prevState => {
-      return {
-        data: prevState.data.map(post => {
+  // addComment = (comment) => {
+  //   const newComment = {
+  //     text: comment,
+  //     username: "",
+  //     id: Date.now()
+  //   }
+  //   this.setState(prevState => {
+  //     return {
+  //       data: prevState.data.map(post => {
 
-        })
-      }
-    })
-  }
+  //       })
+  //     }
+  //   })
+  // }
   render() {
     return (
       <div className="App">

@@ -1,15 +1,22 @@
 .post{
-    width: 60%;
-    margin: 100px auto;
+    width:95%;
+    min-height: 600px;
+    margin: 20px auto;
     background: teal;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 800px) {
+        width: 60%;
+        margin: 100px auto;
+    }
     header{
         display: flex;
         padding: 15px 20px;
         align-items: center;
         img {
-            max-width: 40px;
-            max-height: 40px;
+            max-width: 30px;
+            max-height: 30px;
             object-fit: cover;
             border-radius: 50%;
 

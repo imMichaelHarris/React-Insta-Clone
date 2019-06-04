@@ -4,8 +4,13 @@
 }
 .comment-section {
   margin: 20px;
+
   .comment {
       margin: 5px 0;
+      .posted{
+        font-size: .8rem;
+        color: #bbb;
+      }
   }
   input {
     border: none;

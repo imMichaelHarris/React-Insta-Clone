@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 import { Card, CardImg } from "reactstrap";
 const Post = props => {
   return (
-    <div className="post">
-      <Card>
+    <div >
+      <Card className="post">
         <header>
           <img
             src={props.post.thumbnailUrl}
