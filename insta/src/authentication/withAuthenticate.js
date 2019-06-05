@@ -12,6 +12,12 @@ const withAuthenticate = Posts => Login =>
             }
         })
     }
+
+    logOut = () => {
+        this.setState({
+            loggedIn: false
+        })
+    }
     componentDidMount() {
       if (localStorage.getItem("username")) {
         this.setState({
@@ -24,7 +30,8 @@ const withAuthenticate = Posts => Login =>
       }
     }
     render() {
-       return this.state.loggedIn ? <Posts /> : <Login />
+        console.log(this.state)
+       return this.state.loggedIn ? <Posts logOut={this.logOut} /> : <Login />
     }
   };
 

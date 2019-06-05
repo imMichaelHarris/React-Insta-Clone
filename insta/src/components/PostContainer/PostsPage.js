@@ -16,8 +16,10 @@ class PostsPage extends React.Component {
     });
   }
 
+
   logOut = () => {
-    localStorage.removeItem("username")
+    localStorage.removeItem("username");
+    this.props.logOut();
   }
 
   //           SEARCH POST BASED ON USER INPUT                   //
