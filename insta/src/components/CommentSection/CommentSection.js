@@ -29,11 +29,20 @@ class CommentSection extends React.Component {
       };
     });
   };
+  deleteComment = (id) => {
+    this.setState(prevState => {
+      return {
+        comments: prevState.comments.filter(comment => {
+          return comment.id !== id
+        })
+      }
+    })
+  }
   render() {
     return (
       <div className="comment-section">
         {this.state.comments.map(comment => {
-          return <Comment comment={comment} key={comment.id} />;
+          return <Comment comment={comment} key={comment.id} deleteComment={this.deleteComment}/>;
         })}
         <form onSubmit={this.addComment}>
           <input
