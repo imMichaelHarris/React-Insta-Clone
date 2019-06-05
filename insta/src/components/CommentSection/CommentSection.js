@@ -22,18 +22,14 @@ class CommentSection extends React.Component {
       id: Date.now(),
       posted: <Moment fromNow></Moment>
     };
-    const id = this.props.post.post.id;
-    console.log(id);
     this.setState(prevState => {
       return {
         comments: [...prevState.comments, newComment],
         commentInput: ""
       };
     });
-    this.props.addComment(id, newComment);
   };
   render() {
-    // console.log(this.props.post)
     return (
       <div className="comment-section">
         {this.state.comments.map(comment => {

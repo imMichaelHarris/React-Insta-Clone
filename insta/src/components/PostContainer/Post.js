@@ -3,7 +3,6 @@ import CommentSection from "../CommentSection/CommentSection";
 import PropTypes from "prop-types";
 import { Card, CardImg } from "reactstrap";
 class Post extends React.Component {
-  // console.log('post props', props)
   state = {
     comments: this.props.post.comments,
     likes: this.props.post.likes,
@@ -51,8 +50,7 @@ render(){
 
         <CommentSection
           post={this.props}
-          comments={this.props.post.comments}
-          addComment={this.props.addComment}
+          comments={this.state.comments}
         />
       </Card>
     </div>
