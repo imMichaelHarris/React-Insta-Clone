@@ -37,7 +37,7 @@ class PostsPage extends React.Component {
     return (
       <div>
         <header>
-          <button onClick={this.logOut}></button>
+          <button onClick={this.logOut}>Log Out</button>
           <div className="app-header">
             <div className="logo">
               <span className="header insta-logo" />

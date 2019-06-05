@@ -20,17 +20,20 @@ class Login extends React.Component {
   };
 
   login = () => {
-    localStorage.setItem("username", JSON.stringify(this.state.usernameInput));
-    this.setState({
-      usernameInput: "",
-      passwordInput: ""
-    })
+    if(this.state.usernameInput && this.state.passwordInput){
+      localStorage.setItem("username", JSON.stringify(this.state.usernameInput));
+      this.setState({
+        usernameInput: "",
+        passwordInput: ""
+      })
+    }
+
   };
 
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.login}>
           <input
             placeholder="username"
             type="text"
