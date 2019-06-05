@@ -1,6 +1,6 @@
-@import './components/CommentSection/commentsection';
-@import './components/PostContainer/postcontainer';
-@import './components/SearchBar/searchbar.scss';
+@import "./components/CommentSection/commentsection";
+@import "./components/PostContainer/postcontainer";
+@import "./components/SearchBar/searchbar.scss";
 
 //taken from index css
 body {
@@ -19,23 +19,39 @@ code {
 
 .App {
   text-align: center;
+  header{
+    border-bottom: 1px solid #ddd;
+  }
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-header {
+  height: 80px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  width: 70%;
+  margin: auto;
+  .logo {
+    display: flex;
+    align-items: center;
+    width: 150px;
+    justify-content: space-between;
+  }
+  .header {
+    width: 24px;
+    height: 24px;
+    background-image: url("insta.png");
+    display: inline-block;
+  }
+  .insta-logo {
+    background-position: -239px -202px;
+    align-self: flex-start;
+  }
+  .instagram {
+    background-position: -94px -72px;
+    width: 103px;
+    height: 29px;
+  }
 }
 
 .App-link {

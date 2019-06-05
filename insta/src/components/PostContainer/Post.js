@@ -3,8 +3,10 @@ import CommentSection from "../CommentSection/CommentSection";
 import PropTypes from "prop-types";
 import { Card, CardImg } from "reactstrap";
 const Post = props => {
+  // console.log('post props', props)
+
   return (
-    <div >
+    <div>
       <Card className="post">
         <header>
           <img
@@ -17,7 +19,14 @@ const Post = props => {
           src={props.post.imageUrl}
           alt={`${props.post.username}'s post`}
         />
+        <div className="actions">
+          <span onClick={() => props.likePost(props.post.id)} className="action filled" />
+          <span className="action comment-bubble" />
+          <div><span className="likes">{props.post.likes} likes</span></div>
+        </div>
+
         <CommentSection
+          post={props}
           comments={props.post.comments}
           addComment={props.addComment}
         />

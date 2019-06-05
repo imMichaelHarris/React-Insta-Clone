@@ -1,32 +1,60 @@
-.post{
-    width:95%;
-    min-height: 600px;
-    margin: 20px auto;
-    background: teal;
-    text-align: left;
+.post {
+  width: 95%;
+  min-height: 600px;
+  margin: 20px auto;
+  background: teal;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 800px) {
+    width: 40%;
+    margin: 100px auto;
+  }
+  header {
     display: flex;
-    flex-direction: column;
-    @media (min-width: 800px) {
-        width: 60%;
-        margin: 100px auto;
+    padding: 15px 20px;
+    align-items: center;
+    img {
+      max-width: 30px;
+      max-height: 30px;
+      object-fit: cover;
+      border-radius: 50%;
     }
-    header{
-        display: flex;
-        padding: 15px 20px;
-        align-items: center;
-        img {
-            max-width: 30px;
-            max-height: 30px;
-            object-fit: cover;
-            border-radius: 50%;
+  }
+  h4 {
+    margin: 0 10px;
+  }
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
 
-        }
+ 
+  .actions {
+    margin-top: 20px;
+    margin-left: 15px;
+    span {
+        display: inline-block;
+      }
+    .action {
+      width: 24px;
+      height: 24px;
+      background-image: url("insta.png");
+      margin: 0 5px;
     }
-    h4 {
-        margin: 0 10px;
+    .like {
+      background-position: -271px -234px;
     }
-    img{
-        object-fit: cover;
-        width: 100%;
+    .filled {
+        background-position: -271px -208px;
     }
+    .comment-bubble {
+      background-position: -161px -202px;
+    }
+    .likes {
+        font-size: .9rem;
+        font-weight: 600;
+        padding-left: 5px;
+    }
+  }
 }
