@@ -37,24 +37,24 @@ class App extends React.Component {
     });
   };
   //             LIKE A POST                     //
-  likePost = id => {
-    console.log(id);
-    this.setState(prevState => {
-      return {
-        data: prevState.data.map(post => {
-          if (post.id === id) {
-            return {
-              ...post,
-              likes: (post.likes += 1),
-              liked: true
-            };
-          } else {
-            return post;
-          }
-        })
-      };
-    });
-  };
+  // likePost = id => {
+  //   console.log(id);
+  //   this.setState(prevState => {
+  //     return {
+  //       data: prevState.data.map(post => {
+  //         if (post.id === id) {
+  //           return {
+  //             ...post,
+  //             likes: (post.likes += 1),
+  //             liked: true
+  //           };
+  //         } else {
+  //           return post;
+  //         }
+  //       })
+  //     };
+  //   });
+  // };
   //           SEARCH POST BASED ON USER INPUT                   //
   filterPosts = input => {
     this.setState(prevState => {
@@ -80,8 +80,8 @@ class App extends React.Component {
         </header>
         <PostContainer
           posts={this.state.filtered}
-          addComment={this.addComment}
-          likePost={this.likePost}
+          // addComment={this.addComment}
+          // likePost={this.likePost}
         />
       </div>
     );
