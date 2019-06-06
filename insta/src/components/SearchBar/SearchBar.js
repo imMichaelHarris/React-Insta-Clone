@@ -12,7 +12,6 @@ class SearchBar extends React.Component {
     this.props.filterPosts(e.target.value);
   };
   render() {
-    console.log(this.state)
     return (
       <input
         placeholder="Search"

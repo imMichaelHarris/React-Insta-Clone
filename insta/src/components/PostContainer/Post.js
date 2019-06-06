@@ -2,37 +2,61 @@ import React from "react";
 import CommentSection from "../CommentSection/CommentSection";
 import PropTypes from "prop-types";
 import { Card, CardImg } from "reactstrap";
-const Post = props => {
-  // console.log('post props', props)
+class Post extends React.Component {
+  state = {
+    comments: this.props.post.comments,
+    likes: this.props.post.likes,
+    liked: false
+  }
 
+  likePost = () => {
+    if(this.state.liked){
+      this.setState(prevState => {
+        return {
+          likes: prevState.likes - 1,
+          liked: !prevState.liked
+        };
+      });
+    } else {
+      this.setState(prevState => {
+        return {
+          likes: prevState.likes + 1,
+          liked: !prevState.liked
+        }
+      })
+    }
+
+  };
+render(){
   return (
     <div>
       <Card className="post">
         <header>
           <img
-            src={props.post.thumbnailUrl}
-            alt={`${props.post.username}'s profile img`}
+            src={this.props.post.thumbnailUrl}
+            alt={`${this.props.post.username}'s profile img`}
           />
-          <h4>{props.post.username}</h4>
+          <h4>{this.props.post.username}</h4>
         </header>
         <CardImg
-          src={props.post.imageUrl}
-          alt={`${props.post.username}'s post`}
+          src={this.props.post.imageUrl}
+          alt={`${this.props.post.username}'s post`}
         />
         <div className="actions">
-          <span onClick={() => props.likePost(props.post.id)} className="action filled" />
+          <span onClick={this.likePost} className={`action ${this.state.liked ? 'filled': 'like'}`} />
           <span className="action comment-bubble" />
-          <div><span className="likes">{props.post.likes} likes</span></div>
+          <div><span className="likes">{this.state.likes} likes</span></div>
         </div>
 
         <CommentSection
-          post={props}
-          comments={props.post.comments}
-          addComment={props.addComment}
+          post={this.props}
+          comments={this.state.comments}
         />
       </Card>
     </div>
   );
+}
+  
 };
 
 Post.propTypes = {

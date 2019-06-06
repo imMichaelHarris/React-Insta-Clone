@@ -6,7 +6,8 @@ import Moment from 'react-moment';
 class CommentSection extends React.Component {
   state = {
     commentInput: "",
-    comments: this.props.comments
+    comments: this.props.comments,
+    username: JSON.parse(localStorage.getItem("username"))
   };
 
   handleChange = e => {
@@ -18,26 +19,31 @@ class CommentSection extends React.Component {
     e.preventDefault();
     const newComment = {
       text: this.state.commentInput,
-      username: "Michael",
+      username: this.state.username,
       id: Date.now(),
       posted: <Moment fromNow></Moment>
     };
-    const id = this.props.post.post.id;
-    console.log(id);
     this.setState(prevState => {
       return {
         comments: [...prevState.comments, newComment],
         commentInput: ""
       };
     });
-    this.props.addComment(id, newComment);
   };
+  deleteComment = (id) => {
+    this.setState(prevState => {
+      return {
+        comments: prevState.comments.filter(comment => {
+          return comment.id !== id
+        })
+      }
+    })
+  }
   render() {
-    // console.log(this.props.post)
     return (
       <div className="comment-section">
         {this.state.comments.map(comment => {
-          return <Comment comment={comment} key={comment.id} />;
+          return <Comment comment={comment} key={comment.id} deleteComment={this.deleteComment}/>;
         })}
         <form onSubmit={this.addComment}>
           <input
