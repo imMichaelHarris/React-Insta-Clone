@@ -8,6 +8,7 @@ import styled from "styled-components";
 const Section = styled.div `
 margin: 20px;
 margin-top: 0;
+
 `
 
 class CommentSection extends React.Component {
@@ -44,7 +45,6 @@ class CommentSection extends React.Component {
       };
     });
     localStorage.setItem('comments', JSON.stringify(this.state.comments))
-    console.log(JSON.parse(localStorage.getItem('comments')))
   };
   deleteComment = (id) => {
     this.setState(prevState => {
@@ -59,7 +59,7 @@ class CommentSection extends React.Component {
     return (
       <Section>
         {this.state.comments.map(comment => {
-          return <Comment comment={comment} key={comment.id} deleteComment={this.deleteComment}/>;
+          return <Comment comment={comment} key={comment.id} deleteComment={this.deleteComment} username={this.state.username} />;
         })}
         <form onSubmit={this.addComment}>
           <input
