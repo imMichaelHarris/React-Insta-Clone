@@ -6,7 +6,8 @@ import Moment from 'react-moment';
 class CommentSection extends React.Component {
   state = {
     commentInput: "",
-    comments: this.props.comments
+    comments: this.props.comments,
+    username: JSON.parse(localStorage.getItem("username"))
   };
 
   handleChange = e => {
@@ -18,7 +19,7 @@ class CommentSection extends React.Component {
     e.preventDefault();
     const newComment = {
       text: this.state.commentInput,
-      username: "Michael",
+      username: this.state.username,
       id: Date.now(),
       posted: <Moment fromNow></Moment>
     };

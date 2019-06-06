@@ -30,7 +30,6 @@ const withAuthenticate = Posts => Login =>
       }
     }
     render() {
-        console.log(this.state)
        return this.state.loggedIn ? <Posts logOut={this.logOut} /> : <Login />
     }
   };

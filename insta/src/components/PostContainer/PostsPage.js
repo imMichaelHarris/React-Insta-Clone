@@ -6,7 +6,8 @@ import dummyData from "../../dummy-data";
 class PostsPage extends React.Component {
   state = {
     data: dummyData,
-    filtered: dummyData
+    filtered: dummyData,
+    username: ""
   };
 
   componentDidMount() {
@@ -18,6 +19,7 @@ class PostsPage extends React.Component {
 
 
   logOut = () => {
+    // window.location.reload()
     localStorage.removeItem("username");
     this.props.logOut();
   }

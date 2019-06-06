@@ -12,7 +12,7 @@ const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)(Login);
 class App extends React.Component {
  
 
-  //         Initialization             ///
+
  
 
   /////////////////////////////////////////////////////////////////////////
