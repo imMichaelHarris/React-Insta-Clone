@@ -6,18 +6,19 @@ const withAuthenticate = Posts => Login =>
       loggedIn: false
     };
     changeStatus = () => {
-        this.setState(prevState => {
-            return {
-            loggedIn: !prevState.loggedIn
-            }
-        })
-    }
+      this.setState(prevState => {
+        return {
+          loggedIn: !prevState.loggedIn
+        };
+      });
+    };
 
     logOut = () => {
-        this.setState({
-            loggedIn: false
-        })
-    }
+      localStorage.removeItem("username");
+      this.setState({
+        loggedIn: false
+      });
+    };
     componentDidMount() {
       if (localStorage.getItem("username")) {
         this.setState({
@@ -30,7 +31,7 @@ const withAuthenticate = Posts => Login =>
       }
     }
     render() {
-       return this.state.loggedIn ? <Posts logOut={this.logOut} /> : <Login />
+      return this.state.loggedIn ? <Posts logOut={this.logOut} /> : <Login />;
     }
   };
 

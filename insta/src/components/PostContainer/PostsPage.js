@@ -46,7 +46,12 @@ class PostsPage extends React.Component {
               <span className="header instagram" />
             </div>
             <SearchBar filterPosts={this.filterPosts} />
-            <div className="account" />
+            <div className="account" >
+              <span className="header compass"></span>
+              <span className="header heart"></span>
+              <span className="header profile"></span>
+
+            </div>
           </div>
         </header>
         <PostContainer posts={this.state.filtered} />

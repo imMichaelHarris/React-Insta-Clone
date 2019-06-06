@@ -43,6 +43,7 @@ code {
     background-image: url("insta.png");
     display: inline-block;
   }
+
   .insta-logo {
     background-position: -239px -202px;
     align-self: flex-start;
@@ -53,6 +54,22 @@ code {
     height: 29px;
   }
 }
+.account {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  .compass {
+    background-position: -373px -260px;
+  }
+  .heart {
+    background-position: 76px -234px;
+
+  }
+  .profile {
+    background-position: -52px -285px;
+  }
+}
+
 
 .App-link {
   color: #61dafb;

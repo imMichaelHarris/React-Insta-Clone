@@ -1,4 +1,16 @@
 import React from "react";
+import styled from "styled-components";
+
+const Input = styled.input`
+  text-align: center;
+  border-radius: 5px;
+  border-style: none;
+  border: 1px solid #ddd;
+  &:focus {
+    text-align: left;
+    outline: none;
+  }
+`;
 
 class SearchBar extends React.Component {
   state = {
@@ -13,7 +25,7 @@ class SearchBar extends React.Component {
   };
   render() {
     return (
-      <input
+      <Input
         placeholder="Search"
         onChange={this.handleChange}
         name="searchInput"
