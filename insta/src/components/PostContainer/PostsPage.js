@@ -2,6 +2,9 @@ import React from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import PostContainer from "./PostContainer";
 import dummyData from "../../dummy-data";
+import {Button} from 'reactstrap'
+
+
 
 class PostsPage extends React.Component {
   state = {
@@ -39,7 +42,6 @@ class PostsPage extends React.Component {
     return (
       <div>
         <header>
-          <button onClick={this.logOut}>Log Out</button>
           <div className="app-header">
             <div className="logo">
               <span className="header insta-logo" />
@@ -50,6 +52,7 @@ class PostsPage extends React.Component {
               <span className="header compass"></span>
               <span className="header heart"></span>
               <span className="header profile"></span>
+              <Button className="logout" onClick={this.logOut}>Log Out</Button>
 
             </div>
           </div>

@@ -1,12 +1,23 @@
+.comment-username {
+  font-size: 1.1rem;
+  font-weight: 600; }
+
+.comment-section {
+  margin: 20px;
+  margin-top: 0; }
+
+.comment {
+  margin: 5px 0; }
+  .comment .posted {
+    font-size: .8rem;
+    color: #bbb; }
+
 input {
   border: none;
   margin: 5px 0;
   width: 100%;
   outline: none;
   transition: all .3s ease-out; }
-  input:focus {
-    border: 1px solid #000;
-    padding: 5px; }
 
 .post {
   width: 95%;
@@ -55,16 +66,6 @@ input {
       font-weight: 600;
       padding-left: 5px; }
 
-input[placeholder="Search"] {
-  text-align: center;
-  border-radius: 5px;
-  border-style: none;
-  border: 1px solid #ddd; }
-
-input[placeholder="Search"]:focus {
-  text-align: left;
-  outline: none; }
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -80,12 +81,18 @@ code {
     border-bottom: 1px solid #ddd; }
 
 .app-header {
-  height: 80px;
+  min-height: 120px;
   display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: space-between;
-  width: 70%;
   margin: auto; }
+  @media (min-width: 800px) {
+    .app-header {
+      height: 80px;
+      align-items: center;
+      flex-direction: row;
+      width: 70%; } }
   .app-header .logo {
     display: flex;
     align-items: center;
@@ -105,15 +112,21 @@ code {
     height: 29px; }
 
 .account {
-  width: 150px;
+  width: 70%;
   display: flex;
   justify-content: space-between; }
+  @media (min-width: 800px) {
+    .account {
+      width: 150px; } }
   .account .compass {
     background-position: -373px -260px; }
   .account .heart {
     background-position: 76px -234px; }
   .account .profile {
     background-position: -52px -285px; }
+  .account .logout {
+    height: 24px;
+    padding: 0 5px; }
 
 .App-link {
   color: #61dafb; }

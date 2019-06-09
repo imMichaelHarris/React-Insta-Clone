@@ -6,9 +6,14 @@ const Input = styled.input`
   border-radius: 5px;
   border-style: none;
   border: 1px solid #ddd;
+  width: 80%;
   &:focus {
     text-align: left;
     outline: none;
+  }
+  @media(min-width:800px){
+    width: 20%;
+
   }
 `;
 

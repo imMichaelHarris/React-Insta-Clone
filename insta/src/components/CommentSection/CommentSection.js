@@ -11,6 +11,7 @@ margin-top: 0;
 
 `
 
+
 class CommentSection extends React.Component {
   state = {
     commentInput: "",
@@ -18,13 +19,7 @@ class CommentSection extends React.Component {
     username: JSON.parse(localStorage.getItem("username"))
   };
 
-  componentDidMount(){
-    if(localStorage.getItem("comments")){
-      this.setState({
-        // comments: JSON.parse(localStorage.getItem('comments'))
-      })
-    }
-  }
+
   handleChange = e => {
     this.setState({
       [e.target.name]: e.target.value
@@ -56,6 +51,7 @@ class CommentSection extends React.Component {
     })
   }
   render() {
+
     return (
       <Section>
         {this.state.comments.map(comment => {

@@ -1,22 +1,18 @@
 import React from "react";
 import { CardText } from 'reactstrap';
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import styled from 'styled-components';
 
-// const CardText = styled.div`
-//   span {
-//     font-size: 1.1rem;
-//     font-weight: 600;
-//   }
+const DeleteButton = styled.button`
+  font-size: .8rem;
+  border-radius: 5px;
+  border-style: none;
+  margin: 0 10px; 
+  background: tomato;
+  color: #fff
+`
 
-//   .comment {
-//     margin: 5px 0;
-//     .posted {
-//       font-size: 0.8rem;
-//       color: #bbb;
-//     }
-//   }
-// `;
+
 
 const Comment = props => {
   return (
@@ -25,11 +21,9 @@ const Comment = props => {
         <span className="comment-username">{props.comment.username} </span>
         {props.comment.text}{" "}
         <span className="posted">{props.comment.posted}</span>
+        { props.comment.username === props.username ? <DeleteButton onClick={() => props.deleteComment(props.comment.id)}>x</DeleteButton> : ""}
+
       </CardText>
-      { props.comment.username === props.username ? <button onClick={() => props.deleteComment(props.comment.id)}>Delete</button> : ""}
-      {/* <button onClick={() => props.deleteComment(props.comment.id)}>
-        Delete
-      </button> */}
     </div>
   );
 };
