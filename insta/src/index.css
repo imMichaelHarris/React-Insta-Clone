@@ -128,13 +128,25 @@ code {
     height: 24px;
     padding: 0 5px; }
 
-.App-link {
-  color: #61dafb; }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
+#login {
+  text-align: left;
+  width: 90%;
+  border: 1px solid #000;
+  margin: auto;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 30px; }
+  #login button {
+    margin-top: 20px;
+    background: lightgreen;
+    border-style: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 5px; }
+  @media (min-width: 800px) {
+    #login {
+      width: 40%; } }
 
 /*# sourceMappingURL=index.css.map */
