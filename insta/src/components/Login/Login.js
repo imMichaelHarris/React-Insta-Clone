@@ -1,4 +1,7 @@
 import React from "react";
+import {Form, Label, Input} from 'reactstrap'
+
+
 
 class Login extends React.Component {
   state = {
@@ -32,24 +35,29 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.login}>
-          <input
+      
+      <div id="login">
+        <Form onSubmit={this.login}>
+          <Label for="username">Username</Label>
+          <Input
             placeholder="username"
             type="text"
             name="usernameInput"
+            id="username"
             onChange={this.handleChanges}
             value={this.state.usernameInput}
           />
-          <input
+          <Label for="password">Password</Label>
+          <Input
             placeholder="password"
             type="password"
             name="passwordInput"
+            id="password"
             onChange={this.handleChanges}
             value={this.state.passwordInput}
           />
           <button onClick={this.login}>Login</button>
-        </form>
+        </Form>
       </div>
     );
   }

@@ -2,6 +2,15 @@ import React from "react";
 import Comment from "./Comment";
 import PropTypes from "prop-types";
 import Moment from 'react-moment';
+import styled from "styled-components";
+
+
+const Section = styled.div `
+margin: 20px;
+margin-top: 0;
+
+`
+
 
 class CommentSection extends React.Component {
   state = {
@@ -9,6 +18,7 @@ class CommentSection extends React.Component {
     comments: this.props.comments,
     username: JSON.parse(localStorage.getItem("username"))
   };
+
 
   handleChange = e => {
     this.setState({
@@ -29,6 +39,7 @@ class CommentSection extends React.Component {
         commentInput: ""
       };
     });
+    localStorage.setItem('comments', JSON.stringify(this.state.comments))
   };
   deleteComment = (id) => {
     this.setState(prevState => {
@@ -40,10 +51,11 @@ class CommentSection extends React.Component {
     })
   }
   render() {
+
     return (
-      <div className="comment-section">
+      <Section>
         {this.state.comments.map(comment => {
-          return <Comment comment={comment} key={comment.id} deleteComment={this.deleteComment}/>;
+          return <Comment comment={comment} key={comment.id} deleteComment={this.deleteComment} username={this.state.username} />;
         })}
         <form onSubmit={this.addComment}>
           <input
@@ -53,7 +65,7 @@ class CommentSection extends React.Component {
             name="commentInput"
           />
         </form>
-      </div>
+      </Section>
     );
   }
 }
